@@ -1,8 +1,20 @@
 #include<iostream>
+#include<set>
 
 using namespace std;
 
 //Write function count() here.
+
+int count(int *d,int s){
+	set<int> arr;
+	for (int i = 0; i < s; i++)
+	{
+		arr.insert(*(d+i));
+	}
+	return arr.size();
+}
+
+
 
 int main(){	
 	int data[] = {1,2,4,5,4,8,2,1,2,4,6,1,4,4,4,2,1,0,12}; 

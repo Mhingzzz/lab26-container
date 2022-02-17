@@ -37,7 +37,7 @@ void List::insert(int d,int idx){
 		current = current->next;
 	}
 	n->next = current->next;
-	current->next = n;		
+	current->next = n;
 }
 
 void List::show(){
@@ -64,3 +64,22 @@ void List::append(int d){
 }
 
 //Write List::remove() here
+void List::remove(int d){
+	Node *current;
+	Node *before = root;
+	if (d == 0)
+	{
+		current = before->next;
+		root = current;
+		delete before;
+	}else{
+		for (int i = 0; i < d-1; i++)
+		{
+			before = before->next;
+		}
+		current = before->next;
+		before->next = current->next;
+		delete current;
+	}
+	
+}
